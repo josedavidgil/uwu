@@ -1,0 +1,27 @@
+v=float(input("Ingresar el valor..."))
+def cambio (v):
+    while v!=0:
+        a,b,c,d,e,f=0
+        l=[]
+        if v>50:
+            v-=50
+            a+=1
+            l.append(a)
+            print(l)
+        elif v>25:
+            v-=25
+            b+=1
+            l.append(b)
+        elif v>10:
+            v-=10
+            c+=1
+            l.append(c)
+        elif v>5:
+            v-=5
+            d+=1
+            l.append(d)
+        else:
+            v-=1
+            e+=1
+            l.append(e)
+        print(l)
