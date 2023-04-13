@@ -1,0 +1,62 @@
+class Deportista():
+    def __init__(self,nombre:str,documento:int,edad:int):
+        self.__nombre=nombre
+        self.__documento=documento
+        self.__edad=edad
+    #--------Getters-----------
+    def getNombre(self):
+        return self.__nombre
+    def getDocumento(self):
+        return self.__documento
+    def getEdad(self):
+        return self.__edad
+    #--------Setters-----------
+    def setNombre(self,nombre:str):
+        self.__nombre=nombre
+    def setDocumento(self,documento:int):
+        self.__documento=documento
+    def setEdad(self,edad:int):
+        self.__edad=edad
+    def medalla(self):
+        print("Ha ganado una medalla")
+class DeportistaFutbol(Deportista):
+    def __init__(self,nombre:str,documento:int,edad:int,golesAnotados:int,nombreEquipo:str):
+        super().__init__(nombre,documento,edad)
+        self.__golesAnotados=golesAnotados
+        self.__nombreEquipo=nombreEquipo
+    #-----------Getters hijo---------------
+    def getGolesAnotados(self):
+        return self.__golesAnotados
+    def getNombreEquipo(self):
+        return self.__nombreEquipo
+    #-----------Setters hijo---------------
+    def setGolesAnotados(self,golesAnotados):
+        self.__golesAnotados=golesAnotados
+    def setNombreEquipo(self,nombreEquipo):
+        self.__nombreEquipo=nombreEquipo
+    def medalla(self):
+        print("Ha ganado una Europa League")
+class DeportistaTenis(Deportista):
+    def __init__(self,nombre:str,documento:int,edad:int,setsGanados:int,setsPerdidos:int):
+        super().__init__(nombre,documento,edad)
+        self.__setsGanados=setsGanados
+        self.__setsPerdidos=setsPerdidos
+    #-----------Getters hijo2 ---------------
+    def getSetsGanados(self):
+        return self.__setsGanados
+    def getSetsPerdidos(self):
+        return self.__setsPerdidos
+    #-----------Setters hijo 2---------------
+    def setSetsGanados(self,setsGanados):
+        self.__setsGanados=setsGanados
+    def setetsPerdidos(self,setsPerdidos):
+        self.__setsPerdidos=setsPerdidos
+    def medalla(self):
+        print("Ha ganado un trofeito")
+def main():
+    Futbolista = DeportistaFutbol('Falcao',2135463,36,35,'Selección colombia')
+    print(f'Deportista: {Futbolista.getNombre()} {Futbolista.getDocumento()} {Futbolista.getEdad()} {Futbolista.getGolesAnotados()} {Futbolista.getNombreEquipo()} {Futbolista.medalla()}')
+    Futbolista2 = DeportistaTenis('Nole',2135463,36,25,20)
+    print(f'Deportista: {Futbolista2.getNombre()} {Futbolista2.getDocumento()} {Futbolista2.getEdad()} {Futbolista2.getSetsGanados()} {Futbolista2.getSetsPerdidos()} {Futbolista2.medalla()}')
+if __name__=="__main__":
+    main()
